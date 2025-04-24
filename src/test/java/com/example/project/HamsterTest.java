@@ -27,7 +27,6 @@ public class HamsterTest {
         Class<Hamster> hamsterClass = Hamster.class;
         try {
             Field nameField = hamsterClass.getDeclaredField("name");
-            assertNotNull(nameField, "Field 'name' should exist.");
             assertTrue(Modifier.isPrivate(nameField.getModifiers()), "Field 'name' should be private.");
         } catch (NoSuchFieldException e) {
             fail("Field does not exist: " + e.getMessage());
@@ -39,7 +38,6 @@ public class HamsterTest {
         Class<Hamster> hamsterClass = Hamster.class;
         try {
             Method getNameMethod = hamsterClass.getDeclaredMethod("getName");
-            assertNotNull(getNameMethod, "Method 'getName' should exist.");
             assertTrue(Modifier.isPublic(getNameMethod.getModifiers()), "Method 'getName' should be public.");
         } catch (NoSuchMethodException e) {
             fail("Method does not exist: " + e.getMessage());
